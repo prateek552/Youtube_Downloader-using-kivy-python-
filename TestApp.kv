@@ -1,0 +1,61 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#File name:front.py
+
+ScreenManager:
+    id:screen_manager
+    transition:FadeTransition()
+    MainScreen:
+    Second:
+<MainScreen>:
+    name:"main"
+    Download
+<Second>:
+    name:"desc"
+    Desc
+
+<Download>:
+    textin:textin
+    TextInput:
+        id:textin
+        multiline:False
+        size:root.right*3/4-100,60
+        pos:root.x+100,root.top-self.height-root.top/3
+        font_size:40
+    Button:
+        text:"Download"
+        size:root.right/4-100,60
+        pos:root.right*3/4,root.top-self.height-root.top/3
+        on_press:
+            root.downbut() 
+            app.root.current="desc"
+                            
+    Image:
+        source:'youtube.png'
+        pos:root.right/4,root.top-root.top/3
+        size:root.right/2,root.right/4
+
+<Desc>:
+    Label:
+        text:"The video will be stored at C:/"
+        pos:root.right*0.45,root.top*0.65
+        size:root.right*0.1,root.top*0.1
+    Button:
+        text:"Download Audio"
+        pos:root.right/4,root.top/2
+        size:root.right/4,50
+        on_press:root.downaud()
+        
+    Button:
+        text:"Download Video"
+        pos:root.right/2,root.top/2
+        size:root.right/4,50
+        on_press:
+            root.downvid()
+    Label:
+        text:"The download will be in the best available resolution"
+        pos:root.right*0.45,root.top/4
+        
+        
+    	
+		
+	
